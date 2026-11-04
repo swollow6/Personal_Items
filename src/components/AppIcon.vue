@@ -1,0 +1,83 @@
+<script setup lang="ts">
+import {
+  Home,
+  Package,
+  ChartNoAxesCombined,
+  Settings,
+  Plus,
+  ArrowLeft,
+  ArrowUpRight,
+  ChevronRight,
+  Search,
+  SlidersHorizontal,
+  Clock,
+  Check,
+  Archive,
+  Trash2,
+  Download,
+  Upload,
+  ShieldCheck,
+  Image,
+  X,
+  Pencil,
+  Tag,
+  ArrowUp,
+  ArrowDown,
+  Laptop,
+  Armchair,
+  Shirt,
+  Bike,
+  Coffee,
+  Box,
+  Leaf,
+  WifiOff,
+  CircleHelp,
+  HardDrive,
+  CalendarDays,
+} from 'lucide-vue-next'
+const icons = {
+  home: Home,
+  items: Package,
+  stats: ChartNoAxesCombined,
+  settings: Settings,
+  plus: Plus,
+  back: ArrowLeft,
+  arrow: ArrowUpRight,
+  next: ChevronRight,
+  search: Search,
+  filter: SlidersHorizontal,
+  clock: Clock,
+  check: Check,
+  archive: Archive,
+  trash: Trash2,
+  download: Download,
+  upload: Upload,
+  shield: ShieldCheck,
+  image: Image,
+  close: X,
+  edit: Pencil,
+  tag: Tag,
+  up: ArrowUp,
+  down: ArrowDown,
+  laptop: Laptop,
+  furniture: Armchair,
+  clothes: Shirt,
+  sport: Bike,
+  daily: Coffee,
+  box: Box,
+  leaf: Leaf,
+  offline: WifiOff,
+  help: CircleHelp,
+  storage: HardDrive,
+  calendar: CalendarDays,
+}
+withDefaults(defineProps<{ name?: string; size?: number }>(), { name: 'box', size: 20 })
+</script>
+<template>
+  <component
+    :is="icons[name as keyof typeof icons] ?? Box"
+    :size="size"
+    :stroke-width="1.7"
+    aria-hidden="true"
+  />
+</template>
